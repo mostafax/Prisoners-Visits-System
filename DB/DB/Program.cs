@@ -16,7 +16,7 @@ namespace DB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new visitorSelection());
+            Application.Run(new Prisoner());
         }
     }
 }
