@@ -52,6 +52,7 @@
             this.delete = new System.Windows.Forms.Button();
             this.Selectall = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,7 +175,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(338, 380);
+            this.radioButton1.Location = new System.Drawing.Point(327, 380);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(54, 21);
             this.radioButton1.TabIndex = 16;
@@ -192,7 +193,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(470, 380);
+            this.radioButton2.Location = new System.Drawing.Point(398, 380);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(68, 21);
             this.radioButton2.TabIndex = 18;
@@ -203,7 +204,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(602, 380);
+            this.radioButton3.Location = new System.Drawing.Point(480, 380);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(59, 21);
             this.radioButton3.TabIndex = 19;
@@ -227,6 +228,7 @@
             this.insert.TabIndex = 21;
             this.insert.Text = "Insert";
             this.insert.UseVisualStyleBackColor = true;
+            this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // update
             // 
@@ -236,6 +238,7 @@
             this.update.TabIndex = 22;
             this.update.Text = "Update";
             this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // delete
             // 
@@ -245,15 +248,17 @@
             this.delete.TabIndex = 23;
             this.delete.Text = "Delete";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // Selectall
             // 
-            this.Selectall.Location = new System.Drawing.Point(656, 489);
+            this.Selectall.Location = new System.Drawing.Point(620, 371);
             this.Selectall.Name = "Selectall";
-            this.Selectall.Size = new System.Drawing.Size(75, 23);
+            this.Selectall.Size = new System.Drawing.Size(100, 39);
             this.Selectall.TabIndex = 24;
-            this.Selectall.Text = "Select All ";
+            this.Selectall.Text = "View All";
             this.Selectall.UseVisualStyleBackColor = true;
+            this.Selectall.Click += new System.EventHandler(this.Selectall_Click);
             // 
             // dataGridView1
             // 
@@ -264,11 +269,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(506, 304);
             this.dataGridView1.TabIndex = 25;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(671, 484);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 33);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Save Changes";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Prisoner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 545);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Selectall);
             this.Controls.Add(this.delete);
@@ -328,5 +344,6 @@
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button Selectall;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
