@@ -34,14 +34,15 @@ namespace DB
             select_all_visitors.DataSource = gridSource;
 
             ///////////// USING WHERE CONDITION
-            cmd.Connection = con;
-            cmd.CommandText = "select visitor_Name from visitor where visitor_id = 1";
+            cmd.CommandText = "select visitor_id from visitor";
             cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
 
             OracleDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            while (reader.Read())
             {
-                visitor_name.Text = reader[0].ToString();
+                visitor_ids.Items.Add(reader[0].ToString());
+                visitor_ids.SelectedIndex = 0;
             }
 
             ///////////// NOT USING WHERE CONDITION.
@@ -54,11 +55,30 @@ namespace DB
             {
                 gridSource.Rows.Add(reader[0].ToString(),reader[2].ToString(), reader[1].ToString());
             }
+
+
+
+
         }
 
         private void visitorSelection_FormClosing(object sender, FormClosingEventArgs e)
         {
             con.Close();
+        }
+
+        private void visitor_ids_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OracleCommand c = new OracleCommand();
+            c.Connection = con;
+            c.CommandText = "select visitor_name from visitor where visitor_id =:id";
+            c.CommandType = CommandType.Text;
+            c.Parameters.Add("id", visitor_ids.SelectedItem.ToString());
+            OracleDataReader dr = c.ExecuteReader();
+            if (dr.Read())
+            {
+                visitor_name.Text = dr[0].ToString();
+            }
+            dr.Close();
         }
     }
 }

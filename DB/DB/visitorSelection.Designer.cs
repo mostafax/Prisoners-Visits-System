@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.select_all_visitors = new System.Windows.Forms.DataGridView();
             this.visitor_name = new System.Windows.Forms.Label();
+            this.visitor_ids = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.select_all_visitors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,17 +66,27 @@
             // visitor_name
             // 
             this.visitor_name.AutoSize = true;
-            this.visitor_name.Location = new System.Drawing.Point(414, 78);
+            this.visitor_name.Location = new System.Drawing.Point(630, 81);
             this.visitor_name.Name = "visitor_name";
             this.visitor_name.Size = new System.Drawing.Size(84, 17);
             this.visitor_name.TabIndex = 6;
             this.visitor_name.Text = "visitor name";
+            // 
+            // visitor_ids
+            // 
+            this.visitor_ids.FormattingEnabled = true;
+            this.visitor_ids.Location = new System.Drawing.Point(380, 75);
+            this.visitor_ids.Name = "visitor_ids";
+            this.visitor_ids.Size = new System.Drawing.Size(121, 24);
+            this.visitor_ids.TabIndex = 7;
+            this.visitor_ids.SelectedIndexChanged += new System.EventHandler(this.visitor_ids_SelectedIndexChanged);
             // 
             // visitorSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.visitor_ids);
             this.Controls.Add(this.visitor_name);
             this.Controls.Add(this.select_all_visitors);
             this.Controls.Add(this.label2);
@@ -95,6 +106,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView select_all_visitors;
         private System.Windows.Forms.Label visitor_name;
+        private System.Windows.Forms.ComboBox visitor_ids;
     }
 }
 
