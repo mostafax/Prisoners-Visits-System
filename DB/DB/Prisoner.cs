@@ -17,7 +17,7 @@ namespace DB
         OracleDataAdapter adapter;
         OracleCommandBuilder builder;
         DataSet ds;
-        string con = "Data Source = orcl; User Id = scott; Password = tiger;";
+        string con = "data source = ORCL;user id = scott; password = tiger;";
 
         public Prisoner()
         {
@@ -44,15 +44,17 @@ namespace DB
         {
 
             string cmdstr = @"insert into prisoner 
-                values (:name , :age , :time , :start_date , :id , :gender) 
+                values (:name , :age , :time , :start_date , :id , :gender,1) 
                                                     ";
+
             adapter = new OracleDataAdapter(cmdstr, con);
             adapter.SelectCommand.Parameters.Add("name", Name_cm.Text);
             adapter.SelectCommand.Parameters.Add("age", Age_txt.Text);
             adapter.SelectCommand.Parameters.Add("time", duration_txt.Text );
-            adapter.SelectCommand.Parameters.Add("start_date", dateTimePicker1.Text);
+            adapter.SelectCommand.Parameters.Add("start_date", Convert.ToDateTime(dateTimePicker1.Text));
             adapter.SelectCommand.Parameters.Add("id", id_txt.Text);
             adapter.SelectCommand.Parameters.Add("gender", gender_txt.Text);
+
             ds = new DataSet();
             adapter.Fill(ds);
 
@@ -60,7 +62,7 @@ namespace DB
 
         private void Selectall_Click(object sender, EventArgs e)
         {
-            string cmdstr = "select * from prison";
+            string cmdstr = "select * from prisoner";
             adapter = new OracleDataAdapter(cmdstr, con);
             ds = new DataSet();
             adapter.Fill(ds);
@@ -75,12 +77,12 @@ namespace DB
 
         private void update_Click(object sender, EventArgs e)
         {
-            string cmdstr = @"update prisoner set pr_name = :name , pr_age = :age , pr_time = :time , pr_time_satrt = :start_date  , pr_id = :id , pr_gender = :gender ; ";
+            string cmdstr = @"update prisoner set pr_name = :name , pr_age = :age , pr_time = :time , pr_time_satrt = :start_date  , pr_id = :id , pr_gender = :gender , prison_id=1;";
             adapter = new OracleDataAdapter(cmdstr, con);
             adapter.SelectCommand.Parameters.Add("name", Name_cm.Text);
             adapter.SelectCommand.Parameters.Add("age", Age_txt.Text);
             adapter.SelectCommand.Parameters.Add("time", duration_txt.Text);
-            adapter.SelectCommand.Parameters.Add("start_date", dateTimePicker1.Text);
+            adapter.SelectCommand.Parameters.Add("start_date", Convert.ToDateTime( dateTimePicker1.Text));
             adapter.SelectCommand.Parameters.Add("id", id_txt.Text);
             adapter.SelectCommand.Parameters.Add("gender", gender_txt.Text);
             ds = new DataSet();
@@ -97,5 +99,10 @@ namespace DB
             adapter.Fill(ds);
 
         }
+
+        private void Name_cm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }

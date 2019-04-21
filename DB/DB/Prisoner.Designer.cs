@@ -220,6 +220,7 @@
             this.Name_cm.Name = "Name_cm";
             this.Name_cm.Size = new System.Drawing.Size(121, 24);
             this.Name_cm.TabIndex = 20;
+            this.Name_cm.SelectedIndexChanged += new System.EventHandler(this.Name_cm_SelectedIndexChanged);
             // 
             // insert
             // 
@@ -266,6 +267,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(406, 49);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(506, 304);
             this.dataGridView1.TabIndex = 25;
