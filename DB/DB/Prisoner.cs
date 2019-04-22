@@ -78,15 +78,15 @@ namespace DB
         private void update_Click(object sender, EventArgs e)
         {
             string cmdstr = @"update prisoner
-                              set pr_name = :name , pr_age = :age , pr_time = :time , pr_start_time = :start_date  , pr_id = :id , pr_gender = :gender  
-                              where pr_name = :name; ";
+                              set pr_name = :name, pr_age = :age , pr_time = :time , pr_start_time = :start_date , pr_gender = :gender  
+                              where pr_id = :id ";
             adapter = new OracleDataAdapter(cmdstr, con);
             adapter.SelectCommand.Parameters.Add("name", (string)Name_cm.Text);
             adapter.SelectCommand.Parameters.Add("age", Age_txt.Text);
             adapter.SelectCommand.Parameters.Add("time", duration_txt.Text);
             adapter.SelectCommand.Parameters.Add("start_date", Convert.ToDateTime(dateTimePicker1.Text));
-            adapter.SelectCommand.Parameters.Add("id", id_txt.Text);
             adapter.SelectCommand.Parameters.Add("gender", gender_txt.Text);
+            adapter.SelectCommand.Parameters.Add("id", id_txt.Text);
             ds = new DataSet();
             adapter.Fill(ds);
 
