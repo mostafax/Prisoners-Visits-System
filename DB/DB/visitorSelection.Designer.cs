@@ -62,6 +62,7 @@
             this.select_all_visitors.RowTemplate.Height = 24;
             this.select_all_visitors.Size = new System.Drawing.Size(438, 231);
             this.select_all_visitors.TabIndex = 5;
+            this.select_all_visitors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.select_all_visitors_CellContentClick);
             // 
             // visitor_name
             // 

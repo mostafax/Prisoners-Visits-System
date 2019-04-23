@@ -62,6 +62,12 @@
     <Compile Include="Prisoner.Designer.cs">
       <DependentUpon>Prisoner.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrisonerSearchWithName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrisonerSearchWithName.Designer.cs">
+      <DependentUpon>PrisonerSearchWithName.cs</DependentUpon>
+    </Compile>
     <Compile Include="visitorSelection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Prisoner.resx">
       <DependentUpon>Prisoner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrisonerSearchWithName.resx">
+      <DependentUpon>PrisonerSearchWithName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

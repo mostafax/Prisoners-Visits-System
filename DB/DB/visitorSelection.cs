@@ -81,5 +81,10 @@ namespace DB
             }
             dr.Close();
         }
+
+        private void select_all_visitors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

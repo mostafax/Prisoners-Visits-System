@@ -36,3 +36,4 @@ C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.csp
 C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.csproj.CoreCompileInputs.cache
 C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.exe
 C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.pdb
+C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.PrisonerSearchWithName.resources
