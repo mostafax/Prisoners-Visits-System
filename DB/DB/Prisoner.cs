@@ -13,11 +13,12 @@ using Oracle.DataAccess.Types;
 namespace DB
 {
     public partial class Prisoner : Form
-    {
+    {   
         OracleDataAdapter adapter;
         OracleCommandBuilder builder;
         DataSet ds;
         string con = "data source = ORCL;user id = scott; password = tiger;";
+        OracleConnection conn;
 
         public Prisoner()
         {
@@ -32,7 +33,21 @@ namespace DB
 
         private void Prisoner_Load(object sender, EventArgs e)
         {
+           conn = new OracleConnection(con);
+        
+            OracleCommand cmd = new OracleCommand();
 
+            conn.Open();
+            cmd.CommandText = "select pr_name from prisoner";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+            OracleDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Name_cm.Items.Add(reader[0].ToString());
+                Name_cm.SelectedIndex = 0;
+            }
+            reader.Close();
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -44,7 +59,7 @@ namespace DB
         {
 
             string cmdstr = @"insert into prisoner 
-                values (:name , :age , :time , :start_date , :id , :gender,1) 
+                values (:name , :age , :time , :start_date , :id , :gender,1,:cell) 
                                                     ";
 
             adapter = new OracleDataAdapter(cmdstr, con);
@@ -54,6 +69,7 @@ namespace DB
             adapter.SelectCommand.Parameters.Add("start_date", Convert.ToDateTime(dateTimePicker1.Text));
             adapter.SelectCommand.Parameters.Add("id", id_txt.Text);
             adapter.SelectCommand.Parameters.Add("gender", gender_txt.Text);
+            adapter.SelectCommand.Parameters.Add("cell", cell_txt.Text);
 
             ds = new DataSet();
             adapter.Fill(ds);
@@ -78,7 +94,7 @@ namespace DB
         private void update_Click(object sender, EventArgs e)
         {
             string cmdstr = @"update prisoner
-                              set pr_name = :name, pr_age = :age , pr_time = :time , pr_start_time = :start_date , pr_gender = :gender  
+                              set pr_name = :name, pr_age = :age , pr_time = :time , pr_start_time = :start_date , pr_gender = :gender , prison_id =1 , cell_number= :cell  
                               where pr_id = :id ";
             adapter = new OracleDataAdapter(cmdstr, con);
             adapter.SelectCommand.Parameters.Add("name", (string)Name_cm.Text);
@@ -86,6 +102,8 @@ namespace DB
             adapter.SelectCommand.Parameters.Add("time", duration_txt.Text);
             adapter.SelectCommand.Parameters.Add("start_date", Convert.ToDateTime(dateTimePicker1.Text));
             adapter.SelectCommand.Parameters.Add("gender", gender_txt.Text);
+            adapter.SelectCommand.Parameters.Add("cell", cell_txt.Text);
+
             adapter.SelectCommand.Parameters.Add("id", id_txt.Text);
             ds = new DataSet();
             adapter.Fill(ds);
@@ -104,7 +122,23 @@ namespace DB
 
         private void Name_cm_SelectedIndexChanged(object sender, EventArgs e)
         {
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = "select * from prisoner where pr_name=:name";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+            cmd.Parameters.Add("name", Name_cm.SelectedItem.ToString());
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                Age_txt.Text = reader[1].ToString();
+                duration_txt.Text = reader[2].ToString();
+                dateTimePicker1.Text = reader[3].ToString();
+                gender_txt.Text = reader[5].ToString();
+                id_txt.Text = reader[4].ToString();
+                cell_txt.Text= reader[7].ToString();
+            }
 
+            reader.Close();
         }
 
         private void radioButton3_Click(object sender, EventArgs e)

@@ -18,6 +18,7 @@ namespace DB
         OracleDataAdapter adapter;
         OracleCommandBuilder builder;
         DataSet ds;
+        OracleConnection conn;
         string con = "data source = ORCL;user id = scott; password = tiger;";
         public Case()
         {
@@ -60,13 +61,13 @@ namespace DB
             //DataSet ds = new DataSet();
 
             //OracleDataAdapter adapter1 = new OracleDataAdapter("SELECT * from case", con);
-            //adapter1.Fill(ds,"case");
+            //adapter1.Fill(ds, "case");
 
             //OracleDataAdapter adapter2 = new OracleDataAdapter("SELECT * from prisoner", con);
-            //adapter2.Fill(ds,"prisoners");
-            
-            //DataRelation r = new DataRelation("fk",ds.Tables[0].Columns["case_id"],
-            //                                    ds.Tables[1].Columns["pr_id"] );
+            //adapter2.Fill(ds, "prisoners");
+
+            //DataRelation r = new DataRelation("fk", ds.Tables[0].Columns["case_id"],
+            //                                    ds.Tables[1].Columns["pr_id"]);
             //ds.Relations.Add(r);
 
             //BindingSource bs_Master = new BindingSource(ds, "case");
@@ -74,10 +75,39 @@ namespace DB
 
             //dataGridView1.DataSource = bs_Master;
             //dataGridView2.DataSource = bs_Child;
+
+
+            OracleConnection conn = new OracleConnection(con);
+
+            OracleCommand cmd = new OracleCommand();
+
+            conn.Open();
+            cmd.CommandText = "select case_name from case";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+            OracleDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                comboBox2.Items.Add(reader[0].ToString());
+                comboBox2.SelectedIndex = 0;
+            }
+            reader.Close();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+        //    OracleCommand cmd = new OracleCommand();
+        //    cmd.CommandText = "select * from case where case_name=:name";
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.Connection = conn;
+        //    cmd.Parameters.Add("name", comboBox2.SelectedItem.ToString());
+        //    OracleDataReader reader = cmd.ExecuteReader();
+        //    if (reader.Read())
+        //    {
+        //        textBox2.Text = reader[1].ToString();
+        //    }
+
+        //    reader.Close();
 
         }
 
@@ -103,6 +133,11 @@ namespace DB
 
             ds = new DataSet();
             adapter.Fill(ds);
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -32,7 +32,7 @@ namespace DB
         {
             string cmdstr = "select * from prisoner where pr_name like :name|| '%' ";
             adapter = new OracleDataAdapter(cmdstr, con);
-            adapter.SelectCommand.Parameters.Add("name", textBox1.Text);
+            adapter.SelectCommand.Parameters.Add("name", comboBox1.Text);
             ds = new DataSet();
             adapter.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
@@ -44,6 +44,26 @@ namespace DB
         }
         
         private void PrisonerSearchWithName_Load(object sender, EventArgs e)
+        {
+            OracleConnection conn = new OracleConnection(con);
+
+            OracleCommand cmd = new OracleCommand();
+
+            conn.Open();
+            cmd.CommandText = "select pr_name from prisoner";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+            OracleDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                comboBox1.Items.Add(reader[0].ToString());
+                comboBox1.SelectedIndex = 0;
+            }
+            reader.Close();
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
