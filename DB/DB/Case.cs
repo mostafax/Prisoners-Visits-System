@@ -55,22 +55,22 @@ namespace DB
         {
 
         }
-
+            
         private void Case_Load(object sender, EventArgs e)
         {
             //DataSet ds = new DataSet();
 
-            //OracleDataAdapter adapter1 = new OracleDataAdapter("SELECT * from case", con);
-            //adapter1.Fill(ds, "case");
+            //OracleDataAdapter adapter1 = new OracleDataAdapter("SELECT * from prison", con);
+            //adapter1.Fill(ds, "prison");
 
             //OracleDataAdapter adapter2 = new OracleDataAdapter("SELECT * from prisoner", con);
-            //adapter2.Fill(ds, "prisoners");
+            //adapter2.Fill(ds, "prisoner");
 
-            //DataRelation r = new DataRelation("fk", ds.Tables[0].Columns["case_id"],
-            //                                    ds.Tables[1].Columns["pr_id"]);
+            //DataRelation r = new DataRelation("fk", ds.Tables[0].Columns["prison_id"],
+            //                                    ds.Tables[1].Columns["prison_id"]);
             //ds.Relations.Add(r);
 
-            //BindingSource bs_Master = new BindingSource(ds, "case");
+            //BindingSource bs_Master = new BindingSource(ds, "prison");
             //BindingSource bs_Child = new BindingSource(bs_Master, "fk");
 
             //dataGridView1.DataSource = bs_Master;
@@ -137,6 +137,11 @@ namespace DB
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
