@@ -69,7 +69,7 @@ namespace DB
             //DataRelation r = new DataRelation("fk", ds.Tables[0].Columns["prison_id"],
             //                                    ds.Tables[1].Columns["prison_id"]);
             //ds.Relations.Add(r);
-
+            
             //BindingSource bs_Master = new BindingSource(ds, "prison");
             //BindingSource bs_Child = new BindingSource(bs_Master, "fk");
 
@@ -77,7 +77,7 @@ namespace DB
             //dataGridView2.DataSource = bs_Child;
 
 
-            OracleConnection conn = new OracleConnection(con);
+            conn = new OracleConnection(con);
 
             OracleCommand cmd = new OracleCommand();
 
@@ -96,18 +96,18 @@ namespace DB
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-        //    OracleCommand cmd = new OracleCommand();
-        //    cmd.CommandText = "select * from case where case_name=:name";
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.Connection = conn;
-        //    cmd.Parameters.Add("name", comboBox2.SelectedItem.ToString());
-        //    OracleDataReader reader = cmd.ExecuteReader();
-        //    if (reader.Read())
-        //    {
-        //        textBox2.Text = reader[1].ToString();
-        //    }
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = "select * from case where case_name=:name";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+            cmd.Parameters.Add("name", comboBox2.SelectedItem.ToString());
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                textBox2.Text = reader[0].ToString();
+            }
 
-        //    reader.Close();
+            reader.Close();
 
         }
 
