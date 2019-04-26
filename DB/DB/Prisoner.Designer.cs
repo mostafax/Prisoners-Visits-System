@@ -50,6 +50,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 171);
+            this.label3.Location = new System.Drawing.Point(12, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 2;
@@ -83,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 232);
+            this.label4.Location = new System.Drawing.Point(12, 218);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 17);
             this.label4.TabIndex = 3;
@@ -92,7 +94,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 281);
+            this.label5.Location = new System.Drawing.Point(12, 268);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(21, 17);
             this.label5.TabIndex = 4;
@@ -108,28 +110,28 @@
             // 
             // gender_txt
             // 
-            this.gender_txt.Location = new System.Drawing.Point(200, 171);
+            this.gender_txt.Location = new System.Drawing.Point(200, 157);
             this.gender_txt.Name = "gender_txt";
             this.gender_txt.Size = new System.Drawing.Size(100, 22);
             this.gender_txt.TabIndex = 7;
             // 
             // cell_txt
             // 
-            this.cell_txt.Location = new System.Drawing.Point(200, 227);
+            this.cell_txt.Location = new System.Drawing.Point(200, 213);
             this.cell_txt.Name = "cell_txt";
             this.cell_txt.Size = new System.Drawing.Size(100, 22);
             this.cell_txt.TabIndex = 8;
             // 
             // id_txt
             // 
-            this.id_txt.Location = new System.Drawing.Point(200, 281);
+            this.id_txt.Location = new System.Drawing.Point(200, 268);
             this.id_txt.Name = "id_txt";
             this.id_txt.Size = new System.Drawing.Size(100, 22);
             this.id_txt.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(200, 331);
+            this.dateTimePicker1.Location = new System.Drawing.Point(200, 303);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 10;
@@ -137,7 +139,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 331);
+            this.label6.Location = new System.Drawing.Point(11, 303);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 17);
             this.label6.TabIndex = 11;
@@ -146,7 +148,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 379);
+            this.label7.Location = new System.Drawing.Point(12, 351);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 12;
@@ -154,7 +156,7 @@
             // 
             // duration_txt
             // 
-            this.duration_txt.Location = new System.Drawing.Point(200, 379);
+            this.duration_txt.Location = new System.Drawing.Point(200, 351);
             this.duration_txt.Name = "duration_txt";
             this.duration_txt.Size = new System.Drawing.Size(100, 22);
             this.duration_txt.TabIndex = 17;
@@ -221,7 +223,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(306, 379);
+            this.label9.Location = new System.Drawing.Point(306, 351);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 17);
             this.label9.TabIndex = 27;
@@ -231,7 +233,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 419);
+            this.label8.Location = new System.Drawing.Point(5, 409);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 17);
             this.label8.TabIndex = 29;
@@ -239,16 +241,38 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(200, 414);
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(200, 404);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(165, 22);
             this.textBox1.TabIndex = 30;
+            this.textBox1.UseWaitCursor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 379);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(48, 17);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Prison";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(200, 379);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 32;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Prisoner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 545);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -304,5 +328,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
