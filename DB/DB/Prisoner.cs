@@ -132,12 +132,13 @@ namespace DB
             {
                 Age_txt.Text = reader[1].ToString();
                 duration_txt.Text = reader[2].ToString();
-                dateTimePicker1.Text = reader[3].ToString();
+                //dateTimePicker1.Text = reader[3].ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(reader[3]);
                 gender_txt.Text = reader[5].ToString();
                 id_txt.Text = reader[4].ToString();
                 cell_txt.Text= reader[7].ToString();
             }
-
+            textBox1.Text = dateTimePicker1.Value.AddMonths(int.Parse(duration_txt.Text)).ToString();
             reader.Close();
         }
 
@@ -150,5 +151,14 @@ namespace DB
         {
 
         }
+
+        private void dateTimePicker2_ValueChanged_1(object sender, EventArgs e)
+        {
+            
+            
+
+        }
+
+        
     }
     }
