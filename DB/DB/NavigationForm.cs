@@ -57,5 +57,27 @@ namespace DB
             prisoner.Show();
 
         }
+
+        private void connectedModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void visitFunctionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void visitorFunctionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            visitorFunction visitor_functions = new visitorFunction();
+            visitor_functions.Show();
+        }
+
+        private void visitorSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            visitorSelection visitor_selection = new visitorSelection();
+            visitor_selection.Show();
+        }
     }
 }

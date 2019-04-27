@@ -107,12 +107,14 @@
             this.connectedModeToolStripMenuItem.Name = "connectedModeToolStripMenuItem";
             this.connectedModeToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
             this.connectedModeToolStripMenuItem.Text = "Connected Mode";
+            this.connectedModeToolStripMenuItem.Click += new System.EventHandler(this.connectedModeToolStripMenuItem_Click);
             // 
             // visitFunctionToolStripMenuItem
             // 
             this.visitFunctionToolStripMenuItem.Name = "visitFunctionToolStripMenuItem";
             this.visitFunctionToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.visitFunctionToolStripMenuItem.Text = "visit function";
+            this.visitFunctionToolStripMenuItem.Click += new System.EventHandler(this.visitFunctionToolStripMenuItem_Click);
             // 
             // visitSelectionToolStripMenuItem
             // 
@@ -125,12 +127,14 @@
             this.visitorFunctionToolStripMenuItem.Name = "visitorFunctionToolStripMenuItem";
             this.visitorFunctionToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.visitorFunctionToolStripMenuItem.Text = "visitor function";
+            this.visitorFunctionToolStripMenuItem.Click += new System.EventHandler(this.visitorFunctionToolStripMenuItem_Click);
             // 
             // visitorSelectionToolStripMenuItem
             // 
             this.visitorSelectionToolStripMenuItem.Name = "visitorSelectionToolStripMenuItem";
             this.visitorSelectionToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.visitorSelectionToolStripMenuItem.Text = "visitor selection";
+            this.visitorSelectionToolStripMenuItem.Click += new System.EventHandler(this.visitorSelectionToolStripMenuItem_Click);
             // 
             // disconnectedModeToolStripMenuItem
             // 
