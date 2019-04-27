@@ -58,23 +58,23 @@ namespace DB
             
         private void Case_Load(object sender, EventArgs e)
         {
-            //DataSet ds = new DataSet();
+            DataSet ds = new DataSet();
 
-            //OracleDataAdapter adapter1 = new OracleDataAdapter("SELECT * from prison", con);
-            //adapter1.Fill(ds, "prison");
+            OracleDataAdapter adapter1 = new OracleDataAdapter("SELECT * from prison", con);
+            adapter1.Fill(ds, "prison");
 
-            //OracleDataAdapter adapter2 = new OracleDataAdapter("SELECT * from prisoner", con);
-            //adapter2.Fill(ds, "prisoner");
+            OracleDataAdapter adapter2 = new OracleDataAdapter("SELECT * from prisoner", con);
+            adapter2.Fill(ds, "prisoner");
 
-            //DataRelation r = new DataRelation("fk", ds.Tables[0].Columns["prison_id"],
-            //                                    ds.Tables[1].Columns["prison_id"]);
-            //ds.Relations.Add(r);
-            
-            //BindingSource bs_Master = new BindingSource(ds, "prison");
-            //BindingSource bs_Child = new BindingSource(bs_Master, "fk");
+            DataRelation r = new DataRelation("fk", ds.Tables[0].Columns["prison_id"],
+                                                ds.Tables[1].Columns["prison_id"]);
+            ds.Relations.Add(r);
 
-            //dataGridView1.DataSource = bs_Master;
-            //dataGridView2.DataSource = bs_Child;
+            BindingSource bs_Master = new BindingSource(ds, "prison");
+            BindingSource bs_Child = new BindingSource(bs_Master, "fk");
+
+            dataGridView1.DataSource = bs_Master;
+            dataGridView2.DataSource = bs_Child;
 
 
             conn = new OracleConnection(con);

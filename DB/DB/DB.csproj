@@ -56,6 +56,12 @@
     <Compile Include="Case.Designer.cs">
       <DependentUpon>Case.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NavigationForm.Designer.cs">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prisoner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Case.resx">
       <DependentUpon>Case.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationForm.resx">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prisoner.resx">
       <DependentUpon>Prisoner.cs</DependentUpon>
