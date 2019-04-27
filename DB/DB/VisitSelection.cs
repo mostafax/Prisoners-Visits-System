@@ -82,5 +82,10 @@ namespace DB
             visit_name.Text = str;
 
         }
+
+        private void visit_data_gridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

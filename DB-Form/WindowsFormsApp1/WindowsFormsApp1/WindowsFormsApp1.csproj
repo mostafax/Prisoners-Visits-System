@@ -38,6 +38,10 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\l goz2 da bta3 rana\DB\bin\Debug\Oracle.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -53,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Case.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Case.designer.cs">
+      <DependentUpon>Case.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,14 +99,53 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="NavigationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="NavigationForm.designer.cs">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prisoner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prisoner.designer.cs">
+      <DependentUpon>Prisoner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrisonerSearchWithName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrisonerSearchWithName.designer.cs">
+      <DependentUpon>PrisonerSearchWithName.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="visitFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visitFunction.designer.cs">
+      <DependentUpon>visitFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="visitorFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visitorFunction.designer.cs">
+      <DependentUpon>visitorFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="visitorSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visitorSelection.designer.cs">
+      <DependentUpon>visitorSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisitSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitSelection.designer.cs">
+      <DependentUpon>VisitSelection.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Case.resx">
+      <DependentUpon>Case.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
@@ -118,8 +167,14 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="NavigationForm.resx">
+      <DependentUpon>NavigationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prisoner.resx">
+      <DependentUpon>Prisoner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrisonerSearchWithName.resx">
+      <DependentUpon>PrisonerSearchWithName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,6 +185,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="visitFunction.resx">
+      <DependentUpon>visitFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visitorFunction.resx">
+      <DependentUpon>visitorFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visitorSelection.resx">
+      <DependentUpon>visitorSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

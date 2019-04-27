@@ -54,11 +54,5 @@ namespace WindowsFormsApp1
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            var form4 = (Form4)Tag;
-            form4.Show();
-            Close();
-        }
     }
 }

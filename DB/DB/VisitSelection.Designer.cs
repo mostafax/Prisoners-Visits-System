@@ -80,8 +80,9 @@
             this.visit_data_gridView.RowTemplate.Height = 24;
             this.visit_data_gridView.Size = new System.Drawing.Size(595, 194);
             this.visit_data_gridView.TabIndex = 4;
+            this.visit_data_gridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.visit_data_gridView_CellContentClick);
             // 
-            // VisitSelection
+            // visitSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -91,7 +92,7 @@
             this.Controls.Add(this.VisitIDS);
             this.Controls.Add(this.visit_name);
             this.Controls.Add(this.visit_ids);
-            this.Name = "VisitSelection";
+            this.Name = "visitSelection";
             this.Text = "VisitSelection";
             this.Load += new System.EventHandler(this.VisitSelection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.visit_data_gridView)).EndInit();

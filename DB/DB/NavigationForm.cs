@@ -19,7 +19,7 @@ namespace DB
 
         private void viewReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //prisoner_ Crystal_prisoner = new Form1();
         }
 
         private void caseToolStripMenuItem1_Click(object sender, EventArgs e)
