@@ -121,6 +121,7 @@
             this.visitSelectionToolStripMenuItem.Name = "visitSelectionToolStripMenuItem";
             this.visitSelectionToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.visitSelectionToolStripMenuItem.Text = "visit selection";
+            this.visitSelectionToolStripMenuItem.Click += new System.EventHandler(this.visitSelectionToolStripMenuItem_Click);
             // 
             // visitorFunctionToolStripMenuItem
             // 

@@ -65,7 +65,8 @@ namespace DB
 
         private void visitFunctionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            visitFunction visit_functions = new visitFunction();
+            visit_functions.Show();
         }
 
         private void visitorFunctionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,6 +79,12 @@ namespace DB
         {
             visitorSelection visitor_selection = new visitorSelection();
             visitor_selection.Show();
+        }
+
+        private void visitSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            visitSelection visit_selection = new visitSelection();
+            visit_selection.Show();
         }
     }
 }

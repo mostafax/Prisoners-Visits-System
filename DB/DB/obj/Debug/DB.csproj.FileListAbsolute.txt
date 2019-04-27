@@ -38,3 +38,5 @@ C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.pdb
 C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.csprojAssemblyReference.cache
 C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\bin\Debug\DB.pdb
 C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.NavigationForm.resources
+C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.visitFunction.resources
+C:\Users\Mostafax\Desktop\DB Task\Prisoners-Visits-System\DB\DB\obj\Debug\DB.visitSelection.resources
